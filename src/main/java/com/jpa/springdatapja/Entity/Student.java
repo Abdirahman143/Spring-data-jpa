@@ -36,10 +36,8 @@ public class Student {
     private String lastName;
     @Column(nullable = false)
     private String email_address;
-    private String guardianName;
-    @Column(nullable = false)
-    private String guardianEmail;
-    private String guardianMobileNumber;
+    @Embedded
+  private Guardian guardian;
 
 //    public Student(String firstName,
 //                   String lastName,
