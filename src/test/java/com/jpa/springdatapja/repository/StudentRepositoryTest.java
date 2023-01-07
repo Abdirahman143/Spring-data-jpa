@@ -13,7 +13,19 @@ class StudentRepositoryTest {
 
      @Autowired
     private StudentRepository studentRepository;
+    @Test
+    public void SaveStudent() {
+        Student student = Student.builder()
+                .firstName("Abdirahman")
+                .lastName("Bashir")
+                .email_address("bashir@gmail.com")
+                .guardianName("Abdi")
+                .guardianEmail("Abdi@gmail.com")
+                .guardianMobileNumber("0700098176").build();
 
-   
+        studentRepository.save(student);
+    }
+
+
 
 }
