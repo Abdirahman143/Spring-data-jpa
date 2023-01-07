@@ -1,13 +1,12 @@
 package com.jpa.springdatapja.repository;
 
+import com.jpa.springdatapja.Entity.Guardian;
 import com.jpa.springdatapja.Entity.Student;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import java.util.List;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 @SpringBootTest
 class StudentRepositoryTest {
@@ -16,14 +15,19 @@ class StudentRepositoryTest {
      @Autowired
     private StudentRepository studentRepository;
     @Test
-    public void SaveStudent() {
+    public void SaveStudentAndGuardian() {
+        Guardian guardian = Guardian.builder()
+                .name("Abdi Ali")
+                .email("Abdi2@gmail.com")
+                .mobile("079998090")
+                .build();
+
         Student student = Student.builder()
-                .firstName("Abdirahman")
-                .lastName("Bashir")
-                .email_address("bashir@gmail.com")
-                .guardianName("Abdi")
-                .guardianEmail("Abdi@gmail.com")
-                .guardianMobileNumber("0700098176").build();
+                .firstName("Mohamed")
+                .lastName("Muse")
+                .email_address("Moha@gmail.com")
+                .guardian(guardian)
+                .build();
 
         studentRepository.save(student);
     }
