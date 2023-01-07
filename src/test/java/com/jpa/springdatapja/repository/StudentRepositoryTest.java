@@ -2,9 +2,11 @@ package com.jpa.springdatapja.repository;
 
 import com.jpa.springdatapja.Entity.Guardian;
 import com.jpa.springdatapja.Entity.Student;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.util.Assert;
 
 import java.util.List;
 
@@ -42,6 +44,14 @@ public void getAllStudent(){
 @Test
 public void DeletingStudent(){
     studentRepository.delete(new Student());
+
+    }
+
+    @Test
+    public  void getFirstName(){
+       List<Student> student = studentRepository.findByFirstName("Mohamed");
+        System.out.println("student = " + student);
+        //gAssertions.assertEquals(student.toString(), "Mohamed");
 
     }
 
