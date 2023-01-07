@@ -55,5 +55,21 @@ public void DeletingStudent(){
 
     }
 
+    @Test
+    public void getFirstNameContaining(){
+        List<Student>firstName = studentRepository.findByFirstNameContaining("Ab");
+        System.out.println("firstName = " + firstName);
+    }
+
+    @Test
+    public void getGuardianName(){
+        List<Student>name = studentRepository.findByGuardianName("Abdi");
+        System.out.println("name = " + name);
+    }
+    @Test
+    public void getLastNameOfStudent(){
+        List<Student>lastName = studentRepository.findByLastName("Muse");
+        System.out.println("lastName = " + lastName);
+    }
 
 }
