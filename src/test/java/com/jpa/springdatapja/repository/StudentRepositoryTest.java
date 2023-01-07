@@ -35,5 +35,11 @@ public void getAllStudent(){
 
 }
 
+@Test
+public void DeletingStudent(){
+    studentRepository.delete(new Student());
+
+    }
+
 
 }
