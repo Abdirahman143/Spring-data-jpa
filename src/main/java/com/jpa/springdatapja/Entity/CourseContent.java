@@ -2,16 +2,15 @@ package com.jpa.springdatapja.Entity;
 
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
+import org.hibernate.engine.internal.Cascade;
 
 @Entity
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
+@ToString(exclude = "course")
 @Table(name = "course_contents")
 public class CourseContent {
 
@@ -29,7 +28,10 @@ public class CourseContent {
     @Column(name = "course_content_id")
     private Long Id;
     private String url;
-    @OneToOne
+    @OneToOne(
+            cascade=CascadeType.ALL,
+            fetch = FetchType.LAZY
+    )
     @JoinColumn(
             name = "course_id",
             referencedColumnName = "courseId"
