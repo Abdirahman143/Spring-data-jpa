@@ -91,4 +91,13 @@ public void DeletingStudentByLastName(){
                 studentRepository.findStudentByEmailAddressNative("Moha@gmail.com");
     }
 
+
+    @Test
+    public void updateStudentNameByEmailIdTest(){
+        studentRepository.updateStudentNameByEmailId(
+                "Apdulrahman Bashir",
+                "bashir@gmail.com"
+        );
+    }
+
 }
