@@ -31,12 +31,12 @@ public class Lecturer {
     private Long lec_id;
     private String firstName;
     private String lastName;
-    @OneToMany(
-            cascade =  CascadeType.ALL
-    )
-    @JoinColumn(
-            name = "lecturer_id",
-            referencedColumnName = "lec_id"
-    )
-   private List<Course> course;
+//    @OneToMany(
+//            cascade =  CascadeType.ALL
+//    )
+//    @JoinColumn(
+//            name = "lecturer_id",
+//            referencedColumnName = "lec_id"
+//    )
+//   private List<Course> course;
 }

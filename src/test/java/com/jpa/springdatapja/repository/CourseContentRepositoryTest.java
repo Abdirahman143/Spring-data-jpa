@@ -20,13 +20,13 @@ class CourseContentRepositoryTest {
     public void SaveCourseContent(){
         Course course =Course
                 .builder()
-                .courseName("System Programming")
-                .credit(12)
+                .courseName(".NET framework")
+                .credit(10)
                 .build();
         CourseContent courseContent =
                 CourseContent
                         .builder()
-                        .url("WWWW.CBC/SystemProgramming")
+                        .url("WWWW.CBC/.net")
                         .course(course)
                         .build();
 

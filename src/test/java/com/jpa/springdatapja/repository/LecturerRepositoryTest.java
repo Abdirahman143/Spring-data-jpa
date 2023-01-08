@@ -32,7 +32,7 @@ class LecturerRepositoryTest {
                 .builder()
                 .firstName("Asho")
                 .lastName("Kahin")
-                .course(List.of(Java,DBA))
+                //.course(List.of(Java,DBA))
                 .build();
 
         lecturerRepository.save(lecturer);

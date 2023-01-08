@@ -33,4 +33,14 @@ public class Course {
     )
    private CourseContent courseContent;
 
+    @ManyToOne(
+            cascade =  CascadeType.ALL
+    )
+    @JoinColumn(
+            name = "lecturer_id",
+            referencedColumnName = "lec_id"
+
+    )
+    private Lecturer lecturer;
+
 }
