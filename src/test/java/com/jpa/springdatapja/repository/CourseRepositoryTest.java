@@ -1,8 +1,6 @@
 package com.jpa.springdatapja.repository;
 
-import com.jpa.springdatapja.Entity.Course;
-import com.jpa.springdatapja.Entity.CourseContent;
-import com.jpa.springdatapja.Entity.Lecturer;
+import com.jpa.springdatapja.Entity.*;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -91,6 +89,39 @@ class CourseRepositoryTest{
 
         System.out.println("course = " + course);
 
+    }
+
+
+    @Test
+    public void SaveCourseWithStudentAndLecturer(){
+        Guardian guardian = Guardian
+                .builder()
+                .name("Osman")
+                .email("osman@gmail.com")
+                .mobile("9088880")
+                .build();
+        Student student = Student
+                .builder()
+                .firstName("Shukri")
+                .lastName("Zubeir")
+                .email_address("Shukri@gamil.com")
+                .guardian(guardian)
+                .build();
+
+        Lecturer lecturer = Lecturer
+                .builder()
+                .firstName("Mooye")
+                .lastName("magalooti")
+                .build();
+
+        Course course = Course
+                .builder()
+                .courseName("AI")
+                .credit(8)
+                .lecturer(lecturer)
+                .build();
+        course.AddStudent(student);
+        courseRepository.save(course);
     }
 
 }
