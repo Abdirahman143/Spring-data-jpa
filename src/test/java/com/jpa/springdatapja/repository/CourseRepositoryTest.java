@@ -70,6 +70,27 @@ class CourseRepositoryTest{
 
 
     }
-    
+
+
+    @Test
+    public void findAllPageSorting(){
+
+        PageRequest SortByTitle = PageRequest.of(0,2,Sort.by("courseName").descending());
+        PageRequest sortCredit = PageRequest.of(0,1,Sort.by("credit"));
+        
+        PageRequest sortTitleAndCreditByAscendingOrder =
+                PageRequest.of(
+                0,
+                2,
+                Sort.by("courseName").ascending()
+                        .and(Sort.by("credit"))
+        );
+        
+        List<Course>course = 
+                courseRepository.findAll(sortTitleAndCreditByAscendingOrder).getContent();
+
+        System.out.println("course = " + course);
+
+    }
 
 }
