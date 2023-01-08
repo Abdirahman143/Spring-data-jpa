@@ -42,8 +42,8 @@ public void getAllStudent(){
 }
 
 @Test
-public void DeletingStudent(){
-    studentRepository.delete(new Student());
+public void DeletingStudentByLastName(){
+    List<Student>lastName =studentRepository.removeByLastName("Bashir");
 
     }
 
@@ -70,6 +70,25 @@ public void DeletingStudent(){
     public void getLastNameOfStudent(){
         List<Student>lastName = studentRepository.findByLastName("Muse");
         System.out.println("lastName = " + lastName);
+    }
+
+ @Test
+    public void findStudentByEmailAddress(){
+        Student student =
+                studentRepository.findStudentByEmailAddress("bashir@gmail.com");
+     System.out.println("student = " + student);
+    }
+    @Test
+    public void findFirstNameByEmailAddress(){
+        String firstName = 
+                studentRepository.findFirstNameByEmailAddress("bashir@gmail.com");
+        System.out.println("firstName = " + firstName);
+    }
+
+    @Test
+    public void findStudentByEmailAddressNative(){
+        List<Student>emailNative =
+                studentRepository.findStudentByEmailAddressNative("Moha@gmail.com");
     }
 
 }
