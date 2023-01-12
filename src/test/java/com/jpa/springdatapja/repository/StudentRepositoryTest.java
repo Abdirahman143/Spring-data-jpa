@@ -19,15 +19,15 @@ class StudentRepositoryTest {
     @Test
     public void SaveStudentAndGuardian() {
         Guardian guardian = Guardian.builder()
-                .name("Abdi Ali")
-                .email("Abdi2@gmail.com")
-                .mobile("079998090")
+                .name("Ondinya")
+                .email("AO@gmail.com")
+                .mobile("0799989000")
                 .build();
 
         Student student = Student.builder()
-                .firstName("Mohamed")
-                .lastName("Muse")
-                .email_address("Moha@gmail.com")
+                .firstName("Emmanuel")
+                .lastName("Ondinya")
+                .email_address("ondinya@gmail.com")
                 .guardian(guardian)
                 .build();
 
